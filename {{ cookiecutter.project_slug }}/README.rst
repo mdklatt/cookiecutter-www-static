@@ -1,48 +1,36 @@
-{% set delim = "#" * cookiecutter.app_name|length -%}
+{% set delim = "#" * cookiecutter.www_name|length -%}
 {{ delim }}
-{{ cookiecutter.app_name }}
+{{ cookiecutter.www_name }}
 {{ delim }}
 
-This is the {{ cookiecutter.app_name }} application.
+This is the {{ cookiecutter.www_name }} web site.
 
 
 ====================
-Minimum Requirements
+Development Workflow
 ====================
 
+.. _Node.js: https://nodejs.org
 
-=====================
-Optional Requirements
-=====================
+The development machine must have `Node.js`_ installed.
 
 
-===========
-Basic Setup
-===========
-
-Install for the current user:
+Install NPM packages:
 
 .. code-block:: console
 
-  $ python setup.py install --user
+  $ npm install
 
 
-Run the application:
-
-.. code-block:: console
-
-  $ python -m {{ cookiecutter.app_name }} --help
-
-
-Run the test suite:
-
-.. code-block:: console
-   
-  $ pytest test/
-
-
-Build documentation:
+Build TypeScript source; output will be in ``static/script``:
 
 .. code-block:: console
 
-  $ sphinx-build -b html doc doc/_build/html
+  $ npm typescript
+
+
+Run tests:
+
+.. code-block:: console
+
+  $ npm test

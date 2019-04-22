@@ -19,8 +19,8 @@ web site.
 Project Features
 ================
 
-.. _TypeScript: http://pytest.org
-.. _NPM: http://sphinx-doc.org
+.. _TypeScript: https://www.typescriptlang.org/
+.. _NPM: https://docs.npmjs.com
 .. _Nunjucks: https://mozilla.github.io/nunjucks
 .. _MIT License: http://choosealicense.com/licenses/mit
 
