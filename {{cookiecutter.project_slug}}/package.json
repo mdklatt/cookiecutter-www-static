@@ -9,7 +9,7 @@
   },
   "scripts": {
     "typescript": "tsc",
-    "test": "echo \"Error: no test specified\" && true"
+    "test": "echo \"Warning: no test specified\" && true"
   },
   "author": "{{ cookiecutter.author_name }}",
   "license": "MIT"
