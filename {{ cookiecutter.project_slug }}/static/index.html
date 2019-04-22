@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ cookiecutter.site_name }}</title>
+  <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+  <script type="module">
+    import {hello} from "./script/index.js";
+    hello("{{ cookiecutter.author_name }}");
+  </script>
+  <h1>{{ cookiecutter.site_name }}</h1>
+  <p id="greeting"></p>
+</body>
+
+</html>

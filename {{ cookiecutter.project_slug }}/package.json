@@ -1,0 +1,16 @@
+{
+  "name": "www",
+  "version": "0.1.0",
+  "description": "Static web site template",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.4"
+  },
+  "scripts": {
+    "typescript": "tsc",
+    "test": "echo \"Error: no test specified\" && false"
+  },
+  "author": "{{ cookiecutter.author_name }}",
+  "license": "MIT"
+}
