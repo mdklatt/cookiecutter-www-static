@@ -25,7 +25,7 @@ def main():
         tmpdir = Path(tmpdir)
         cookiecutter(str(template), no_input=True, output_dir=str(tmpdir))
         chdir(str(tmpdir.joinpath(defaults["project_slug"])))
-        for command in "install", "run-script typescript", "run-script test":
+        for command in "install", "run-script build", "run-script test":
             check_call(split(f"npm {command:s}"))
     return 0
     

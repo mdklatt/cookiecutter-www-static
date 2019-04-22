@@ -3,6 +3,8 @@
 ##   <https://travis-ci.org/mdklatt/cookiecutter-www-static>
 ##
 language: node_js
+node_js:
+  - "lts/*"
 
 branches:
   only:

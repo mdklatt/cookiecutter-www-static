@@ -22,11 +22,13 @@ Project Features
 .. _TypeScript: https://www.typescriptlang.org/
 .. _NPM: https://docs.npmjs.com
 .. _Nunjucks: https://mozilla.github.io/nunjucks
+.. _webpack: https://webpack.github.io
 .. _MIT License: http://choosealicense.com/licenses/mit
 
 - `NPM`_ project management
-- `TypeScript`_ scripting
+- `TypeScript`_ scripting language
 - `Nunjucks`_ templates
+- `webpack`_ packaging
 - `MIT License`_
 
 
@@ -36,7 +38,7 @@ Web Site Features
 
 .. _ES2015: https://www.ecma-international.org/ecma-262/6.0
 
-- `ES2015`_ scripting / modules
+- `ES2015`_
 
 
 =====

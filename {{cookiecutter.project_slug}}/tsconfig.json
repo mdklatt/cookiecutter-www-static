@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "es2015",
+    "moduleResolution": "node",
     "outDir": "static/script",
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -10,6 +11,6 @@
     "sourceMap": true
   },
   "files": [
-    "src/index.ts"
+    "src/main.ts"
   ]
 }
