@@ -5,38 +5,28 @@ installed into a self-contained venv environment, and the application test
 suite is run.
 
 """
-from contextlib import contextmanager
-from json import load
+from json import loads
 from os import chdir
-from os.path import abspath
-from os.path import dirname
-from os.path import join
+from pathlib import Path
 from shlex import split
-from shutil import which
 from subprocess import check_call
 from tempfile import TemporaryDirectory
 
 from cookiecutter.main import cookiecutter
 
+
 def main():
     """ Execute the test.
     
     """
-    template = dirname(dirname(abspath(__file__)))
-    defaults = load(open(join(template, "cookiecutter.json")))
+    template = Path(__file__).resolve().parents[1]
+    defaults = loads(template.joinpath("cookiecutter.json").read_text())
     with TemporaryDirectory() as tmpdir:
-        chdir(tmpdir)
-        cookiecutter(template, no_input=True)
-        chdir(join(tmpdir, defaults["project_slug"]))
-        # pip = which("pip", path=path) or "pip"  # Travis CI workaround
-        # install = "{:s} install .".format(pip)
-        # for req in (join(root, "requirements.txt") for root in (".", "test")):
-        #     # Add each requirements file to the install.
-        #     install = " ".join((install, "--requirement={:s}".format(req)))
-        # check_call(split(install))
-        # pytest = which("pytest", path=path) or "pytest"  # Travis CI workaround
-        # test = "{:s} --verbose test".format(pytest)
-        # check_call(split(test))
+        tmpdir = Path(tmpdir)
+        cookiecutter(str(template), no_input=True, output_dir=str(tmpdir))
+        chdir(str(tmpdir.joinpath(defaults["project_slug"])))
+        for command in "install", "run-script typescript", "run-script test":
+            check_call(split(f"npm {command:s}"))
     return 0
     
     
