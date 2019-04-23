@@ -1,7 +1,6 @@
-""" Test the python-app Cookiecutter template.
+""" Test the Cookiecutter template.
 
-A template project is created in a temporary directory, the application is
-installed into a self-contained venv environment, and the application test 
+A template project is created in a temporary directory, and the project test
 suite is run.
 
 """

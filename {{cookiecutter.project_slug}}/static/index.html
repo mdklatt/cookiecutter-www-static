@@ -10,6 +10,8 @@
 
 <body>
   <script type="module">
+    // Not sure why ES2016 module imports don't work here. Does the webpack
+    // config need to be modified?
     main.hello("{{ cookiecutter.author_name }}");
   </script>
   <h1>{{ cookiecutter.www_name }}</h1>

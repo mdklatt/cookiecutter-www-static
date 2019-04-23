@@ -19,6 +19,6 @@ module.exports = {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'static/script'),
     library: 'main',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd'  // TODO: is this correct for ES2015 modules?
   }
 };
