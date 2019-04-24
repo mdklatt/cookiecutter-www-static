@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <title>{{ cookiecutter.www_name }}</title>
   <link rel="stylesheet" href="style/index.css">
-  <script src="script/main.bundle.js"></script>
 </head>
 
 <body>
   <script type="module">
-    // Not sure why ES2016 module imports don't work here. Does the webpack
-    // config need to be modified?
-    main.hello("{{ cookiecutter.author_name }}");
+    import { hello } from "./script/main.min.js"
+    hello("{{ cookiecutter.author_name }}");
   </script>
   <h1>{{ cookiecutter.www_name }}</h1>
   <p id="greeting"></p>

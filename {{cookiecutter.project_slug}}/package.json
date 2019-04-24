@@ -2,17 +2,18 @@
   "name": "www",
   "version": "0.1.0",
   "description": "Static web site template",
-  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.4.3",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
+    "rollup": "^1.10.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.3"
   },
   "scripts": {
     "typescript": "tsc",
-    "build": "webpack-cli",
+    "build": "rollup --config",
+    "devel": "rollup --config --watch",
     "test": "echo \"Warning: no test specified\" && true"
   },
   "author": "{{ cookiecutter.author_name }}",
