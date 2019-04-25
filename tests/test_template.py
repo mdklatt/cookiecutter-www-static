@@ -1,7 +1,6 @@
 """ Test the Cookiecutter template.
 
-A template project is created in a temporary directory, and the project test
-suite is run.
+A template project is created in a temporary directory and its tests are run.
 
 """
 from json import loads
@@ -24,7 +23,7 @@ def main():
         tmpdir = Path(tmpdir)
         cookiecutter(str(template), no_input=True, output_dir=str(tmpdir))
         chdir(str(tmpdir.joinpath(defaults["project_slug"])))
-        for command in "install", "run-script build", "run-script test":
+        for command in "install", "run build", "run test":
             check_call(split(f"npm {command:s}"))
     return 0
     
