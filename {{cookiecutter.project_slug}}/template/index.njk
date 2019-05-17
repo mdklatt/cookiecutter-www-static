@@ -3,17 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>{{ cookiecutter.www_name }}</title>
+  <title>{% raw %}{{ title }}{% endraw %}</title>
   <link rel="stylesheet" href="style/index.css">
 </head>
 
 <body>
   <script type="module">
     import { hello } from "./script/main.min.js"
-    hello("{{ cookiecutter.author_name }}");
+    hello();
   </script>
-  <h1>{{ cookiecutter.www_name }}</h1>
+  <h1>H1</h1>
   <p id="greeting"></p>
+  <p></p>
 </body>
 
 </html>
