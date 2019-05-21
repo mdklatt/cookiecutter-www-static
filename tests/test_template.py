@@ -21,7 +21,7 @@ def main() -> int:
     with TemporaryDirectory() as tmpdir:
         cookiecutter(str(template), no_input=True, output_dir=tmpdir)
         path = Path(tmpdir) / defaults["project_slug"]
-        for command in "install", "run nunjucks", "run build", "run test":
+        for command in "install", "run build", "run test":
             check_call(split(f"npm {command:s}"), cwd=path)
     return 0
     

@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import nunjucks from 'nunjucks';
 import path from 'path';
 import resolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
@@ -9,17 +10,40 @@ const develop = process.env.ROLLUP_WATCH
 
 
 /**
- * Plugin for copying static files to their output directory.
+ * Plugin for copying files and directories.
  *
  * @param options copy options
- * @returns
+ * @returns generateBundle hook
  */
 const copy = function(options) {
     return {
         generateBundle() {
-            const root = path.dirname(options.dest)
-            fs.ensureDirSync(root)
+            fs.ensureDirSync(path.dirname(options.dest))
             fs.copy(options.src, options.dest)
+            return
+        }
+    }
+}
+
+
+/**
+ * Plugin to render a Nunjucks template.
+ *
+ * @param options render options
+ * @returns generateBundle hook
+ */
+const render = function(options) {
+    // TODO: Handle entire directories as well as individual files.
+    return {
+        generateBundle() {
+            let context = typeof options.context === "undefined" ? {} : options.context;
+            if (typeof options.context === 'string' || options.context instanceof String) {
+                context = fs.readJSONSync(options.context)
+            }
+            const content = nunjucks.render(options.src, context)
+            fs.ensureDirSync(path.dirname(options.dest))
+            fs.outputFileSync(options.dest, content)
+            return
         }
     }
 }
@@ -36,6 +60,11 @@ export default {
         copy({
             src:  'src/style/',
             dest: 'static/style/'
+        }),
+        render({
+            src:  'src/html/index.njk',
+            dest: 'static/index.html',
+            context: 'src/html/context.json',
         }),
 		typescript(),
 		resolve(),  // locate packages in node_modules

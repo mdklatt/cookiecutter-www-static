@@ -5,6 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "fs-extra": "^8.0.1",
+    "nunjucks": "^3.2.0",
     "nunjucks-cli": "^0.5.1",
     "rollup": "^1.10.1",
     "rollup-plugin-node-resolve": "^4.2.3",
@@ -15,7 +16,7 @@
   },
   "scripts": {
     "typescript": "tsc",
-    "nunjucks": "nunjucks --path template --out static *.njk template/context.json",
+    "nunjucks": "nunjucks --path src/html --out static *.njk src/html/context.json",
     "build": "rollup --config",
     "devel": "rollup --config --watch",
     "test": "echo \"Warning: no test specified\" && true"
