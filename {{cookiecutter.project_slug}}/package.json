@@ -15,8 +15,8 @@
     "typescript": "^3.4.3"
   },
   "scripts": {
-    "typescript": "tsc",
-    "nunjucks": "nunjucks --path src/html --out static *.njk src/html/context.json",
+    "build:js": "tsc",
+    "build:html": "nunjucks --path src/html --out static *.njk src/html/context.json",
     "build": "rollup --config",
     "devel": "rollup --config --watch",
     "test": "echo \"Warning: no test specified\" && true"
