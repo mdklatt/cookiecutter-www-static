@@ -11,13 +11,13 @@ branches:
     - master
     - dev
 
-sudo: false
+dist: xenial
 
 install:
   # Because this is a Node.js project Travis does not create a Python venv,
   # so pip needs to install packages locally.
   - pyenv versions
-  - pyenv local 3.6
+  - pyenv local 3.6.7
   - python -m pip install --requirement=requirements.txt --user
 
 script:

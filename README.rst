@@ -2,10 +2,10 @@
 Static Web Site Project Template
 ################################
 
-.. _travis: https://travis-ci.org/mdklatt/cookiecutter-www-static
+.. _Travis CI: https://travis-ci.org/mdklatt/cookiecutter-www-static
 .. |badge| image:: https://travis-ci.org/mdklatt/cookiecutter-www-static.png
    :alt: Travis CI build status
-   :target: `travis`_
+   :target: `Travis CI`_
 
 |badge|
 
