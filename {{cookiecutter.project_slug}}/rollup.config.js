@@ -62,7 +62,7 @@ export default {
             dest: 'static/style/'
         }),
         render({
-            src:  'src/html/index.njk',
+            src:  'src/html/index.html.njk',
             dest: 'static/index.html',
             context: 'src/html/context.json',
         }),
