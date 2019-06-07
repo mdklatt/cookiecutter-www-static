@@ -1,9 +1,9 @@
 /**
  * Define the greeting text in index.html.
  *
- * @param name - name to use for greeting
+ * @param name greeting name
  */
 export function hello(name="World") {
-    document.querySelector("#greeting").innerHTML = "Hello, " + name
+    document.querySelector("#greeting").innerHTML = `Hello, ${name}`
     return
 }
